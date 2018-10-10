@@ -14,9 +14,9 @@
 #define NUMPIXELS      16
 
 // How many Pixel Rings are connected in series
-#define NUMRINGS        1
+#define NUMRINGS        51
 
-#define TOTALPIXELS     16 // = NUMPIXELS * NUMRINGS
+#define TOTALPIXELS     816 // = NUMPIXELS * NUMRINGS
 
 // When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
 // Note that for older NeoPixel strips you might need to change the third parameter--see the strandtest
