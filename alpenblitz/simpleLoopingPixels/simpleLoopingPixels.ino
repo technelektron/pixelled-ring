@@ -14,14 +14,14 @@
 #define NUMPIXELS      16
 
 // How many Pixel Rings are connected in series
-#define NUMRINGS        51
+#define NUMRINGS        27
 
-#define TOTALPIXELS     816 // = NUMPIXELS * NUMRINGS
+#define TOTALPIXELS     432 // = NUMPIXELS * NUMRINGS
 
 // When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
 // Note that for older NeoPixel strips you might need to change the third parameter--see the strandtest
 // example for more information on possible values.
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(TOTALPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 int delayval = 500; // delay for half a second
 
@@ -77,7 +77,7 @@ void pixelCircleVariableDelay(int dt[], int nPixels, uint32_t pixelCol, uint32_t
   for(int iPixel = 0; iPixel < TOTALPIXELS; iPixel++) {
     if((iPixel%NUMPIXELS) < nPixels)
       pixels.setPixelColor(iPixel, pixelCol);
-    else if((iPixel%(NUMPIXELS-1)) == 00 )
+    else if((iPixel%NUMPIXELS - 15) == 00 )
       pixels.setPixelColor(iPixel, bgCol);
   }
   pixels.show();
